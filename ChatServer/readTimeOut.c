@@ -1,14 +1,11 @@
 #include "readtimeout.h"
 
-// read is a blocking statement and can block a program forever,
-// hence it is recommended to use a timeout system to make it a blocking for a specified time
 
 ssize_t readTimeOut(int fd, void *buf, size_t count, u_int16_t t)
 {
     assert(fd > 0);
 
     struct timeval t_sec;
-    // see "man select" or "man 2 select_tut" for details
     fd_set readfds, writefds, exceptfds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
@@ -30,8 +27,6 @@ ssize_t readTimeOut(int fd, void *buf, size_t count, u_int16_t t)
 }
 
 
-// one read command doesnt necessarily read complete number of bytes,
-// therefore a completeRead function is required to guarantee that it reads as much bytes as expected
 ssize_t completeReadTimeout(int fd, void *dst, size_t n, u_int16_t t)
 {
     assert(dst != NULL);

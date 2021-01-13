@@ -74,7 +74,6 @@ int acceptTimeOut(u_int16_t wait, struct sockaddr_in *client_addr)
         struct timeval t_sec;
         int ret;
 
-        // see "man select" or "man 2 select_tut" for details
         fd_set readfds, writefds, exceptfds;
         FD_ZERO(&readfds);
         FD_ZERO(&writefds);

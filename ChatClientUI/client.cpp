@@ -142,7 +142,6 @@ ssize_t TCP_Client::read_t(int fd, void *buf, size_t count, timeout_sec t)
     assert(fd > 0);
 
     timeval t_sec;
-    // see "man select" or "man 2 select_tut" for details
     fd_set readfds, writefds, exceptfds;
     FD_ZERO(&readfds);
     FD_ZERO(&writefds);
