@@ -1,0 +1,9 @@
+#ifndef SYSTEMSETTINGS_H
+#define SYSTEMSETTINGS_H
+
+#define PORT_NO        6000
+#define MAX_CLIENTS    4
+#define ACCEPT_TIMEOUT (60*60) // ONE HOUR
+#define READ_TIMEOUT   (60*10)  // 10 MINS
+
+#endif // SYSTEMSETTINGS_H
