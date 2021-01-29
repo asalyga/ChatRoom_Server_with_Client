@@ -136,7 +136,7 @@ int TCP_Client::HandleConn()
 
     return 0;
 }
-
+ // Client read
 ssize_t TCP_Client::read_t(int fd, void *buf, size_t count, timeout_sec t)
 {
     assert(fd > 0);
@@ -161,7 +161,7 @@ ssize_t TCP_Client::read_t(int fd, void *buf, size_t count, timeout_sec t)
     else
         return COMM_FAILURE;
 }
-
+ // Client read
 ssize_t TCP_Client::cread_t(int fd, void *dst, size_t n, timeout_sec t)
 {
     assert(dst != nullptr);
@@ -207,7 +207,7 @@ ssize_t TCP_Client::cwrite(void *buf, size_t n)
     else
         return COMM_FAILURE;
 }
-
+ // Client send 
 ssize_t TCP_Client::completeSend(int fd_in, size_t n)
 {
     int fd = get_fd();
@@ -231,7 +231,7 @@ ssize_t TCP_Client::completeSend(int fd_in, size_t n)
         return (ssize_t)(n);
     }
 }
-
+ // Client recive File
 ssize_t TCP_Client::recvFile(const char *filename, size_t n, u_int16_t t)
 {
     assert(filename != NULL);
@@ -257,7 +257,7 @@ ssize_t TCP_Client::recvFile(const char *filename, size_t n, u_int16_t t)
         return n;
     }
 }
-
+ // Client send file 
 ssize_t TCP_Client::sendCustomFile(const char *filename)
 {
     assert(filename != NULL);
